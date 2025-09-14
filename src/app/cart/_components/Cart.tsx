@@ -20,7 +20,7 @@ export default function Cart() {
         }
     })
      
-    const {data,isLoading}= useQuery<CartRes>({queryKey:['cart'],queryFn:async()=>{
+    const {data:cdata,isLoading}= useQuery<CartRes>({queryKey:['cart'],queryFn:async()=>{
         const res = await fetch('/api/cart')
         const payload=await res.json()
         return payload
@@ -34,13 +34,17 @@ return (
     <div className='bg-light w-[80%] mx-auto rounded-[3px] p-8 my-30'>
       <div className='flex justify-between items-center py-5'>
         <h2 className='text-gray-800 text-3xl font-medium'>Cart Shop</h2>
-        <button className='bg-blue-600 text-xl text-white px-5 py-3 transition duration-500 rounded-[8px]  hover:bg-blue-700  cursor-pointer'>
-                <Link href={`/checkout/${data?.cartId}`}>check out</Link>
-            </button>
+        <Link
+  href={`/checkout/${cdata?.cartId}`}
+  className='bg-blue-600 text-xl text-white px-5 py-3 transition duration-500 rounded-[8px] hover:bg-blue-700'
+>
+  Check out
+</Link>
+
       </div>
       <div className='flex justify-between items-center pb-3'>
-        <h5 className='text-gray-800 text-xl font-medium'>total price: <span className='text-main'>{data?.data.totalCartPrice}</span></h5>
-        <h5 className='text-gray-800 text-xl font-medium'>total number of items: <span className='text-main'>{data?.numOfCartItems}</span></h5>
+        <h5 className='text-gray-800 text-xl font-medium'>total price: <span className='text-main'>{cdata?.data.totalCartPrice}</span></h5>
+        <h5 className='text-gray-800 text-xl font-medium'>total number of items: <span className='text-main'>{cdata?.numOfCartItems}</span></h5>
       </div>
 
 
@@ -48,7 +52,7 @@ return (
   <div className="w-full   text-gray-500 dark:text-gray-400">
     
     <div>
-      {data?.data.products.map((prod)=><CartItem key={prod._id} prod={prod}></CartItem>)}
+      {cdata?.data?.products?.map((prod)=><CartItem key={prod._id} prod={prod}></CartItem>)}
     </div>
   </div>
   <div className='flex justify-center my-5 '>
