@@ -16,7 +16,7 @@ export default async function page({params}:{params:Promise<{id:string}>}) {
   return (
     <>
     <div className='flex flex-wrap items-center py-10 container my-30'>
-        <div className=' md:w-1/3'>
+        <div className='w-full md:w-1/3'>
         <Slider data={data}></Slider>
         </div>
         <div className='w-full md:w-2/3 p-5'>

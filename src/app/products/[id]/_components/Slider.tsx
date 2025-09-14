@@ -9,7 +9,7 @@ export default function Slider({data}:{data:ProductInterface}) {
   return (
     <Swiper  loop={true} slidesPerView={1} className="">
             {data.images.map((img)=><SwiperSlide key={img}>
-                    <Image width={400} height={400} src={img} alt='' className='h-[500px]  object-cover w-[100]'/>
+                    <Image width={400} height={400} src={img} alt='' className='h-[500px]  object-cover w-full'/>
             </SwiperSlide>)}
         </Swiper>
   )
