@@ -23,7 +23,7 @@ export default function ProductItem({prod}:{prod:ProductInterface}) {
   const {mutate} = useMutation({mutationFn:addWish,onSuccess:(data)=>{
             queryClient.invalidateQueries({queryKey:['wish']})
             toast.success(data.message)
-          },onError:(data)=>{toast.error(data.message)
+          },onError:()=>{toast.error('login first!')
           }})
 
   return (
