@@ -10,7 +10,7 @@ export default  function AddToCartBtn({id}:{id:string}) {
         onSuccess:(data)=>{
           queryClient.invalidateQueries({queryKey:['cart']})
           toast.success(data.message)
-        },onError:(data)=>{toast.error(data.message)
+        },onError:()=>{toast.error('login first!')
         }
     })
   return (
