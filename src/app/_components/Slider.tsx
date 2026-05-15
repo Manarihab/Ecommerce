@@ -1,7 +1,6 @@
 'use client'
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
 import slider1 from '../../assets/slider1.jpg'
 import slider2 from '../../assets/slider2.jpg'
 import slider3 from '../../assets/slider3.jpg'
@@ -11,7 +10,7 @@ import Image from 'next/image'
 export default function Slider() {
   
   return (
-    <div className='md:flex  w-3/4 md:w-1/2  container mt-30 mb-10'>
+    <div className='hidden lg:flex  w-3/4 md:w-1/2  container mt-30 mb-10'>
         <div className='w-full md:w-1/2'>
         <Swiper
            

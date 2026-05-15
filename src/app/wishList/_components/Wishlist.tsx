@@ -20,7 +20,7 @@ export default function Wishlist() {
   return (
     <>
     {isLoading && <Loading />}
-    <div className='bg-light w-[80%] mx-auto rounded-[3px] p-8 my-30'>
+    <div className='bg-light w-[80%] mx-auto rounded-[3px] p-8 my-30 rounded-lg'>
       <div className='flex justify-between items-center py-5'>
         <h2 className='text-gray-800 text-3xl font-medium'>wishlist</h2>
         
@@ -53,9 +53,9 @@ function WishItem({prod}:{prod:WishI}){
         }
     })
   return <>
-  <div className="flex p-5 items-center border-b dark:bg-gray-800 dark:border-gray-700 ">
+  <div className="flex p-5 items-center border-b dark:bg-gray-800 dark:border-gray-700 overflow-x-scroll">
          <Image width={200} height={200} src={prod.imageCover} className='w-[150px] h-[200px] object-cover' alt=''/>
-         <div className='flex px-5 justify-between items-center w-full'>
+         <div className='flex px-5 justify-between items-center w-full gap-6'>
             <div className='text-gray-800 text-2xl '>
               <h5 className='font-medium'>{prod.title}</h5>
               <h6 className='font-medium'>{prod.price} EGP</h6>

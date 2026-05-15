@@ -6,8 +6,10 @@ export default function Home() {
  
   return (
     <>
+    
     <Slider/>
-    <CatSlider/>
+    <div className='mt-30 lg:mt-0'><CatSlider/></div>
+    
     <Products/>
     </>
   );

@@ -31,7 +31,7 @@ if (status === 'loading') return null;
       
   return (
     <>
-        <nav className="bg-gray-50  border-gray-200 dark:bg-gray-900 fixed w-full top-0 z-10 ">
+        <nav className="bg-gray-50 shadow-md  border-gray-200 dark:bg-gray-900 fixed w-full top-0 z-10 ">
   <div className="max-w-screen-xl container  md:flex items-center justify-between  mx-auto p-4">
 
 

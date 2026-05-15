@@ -31,7 +31,7 @@ export default function Cart() {
 return (
     <>
     {isLoading && <Loading />}
-    <div className='bg-light w-[80%] mx-auto rounded-[3px] p-8 my-30'>
+    <div className='bg-light w-[80%] mx-auto rounded-[3px] p-8 my-30 rounded-lg'>
       <div className='flex justify-between items-center py-5'>
         <h2 className='text-gray-800 text-3xl font-medium'>Cart Shop</h2>
         <Link
@@ -88,15 +88,15 @@ function CartItem({prod}:{prod:Product}){
         },onError:()=>{toast.error('failed to add')
         }
     })
-    return <div className="flex p-5 items-center border-b dark:bg-gray-800 dark:border-gray-700 ">
+    return <div className="flex p-5 items-center border-b dark:bg-gray-800 dark:border-gray-700 overflow-x-scroll">
        <Image width={200} height={200} src={prod.product.imageCover} className='w-[150px] h-[200px] object-cover' alt=''/>
-       <div className='flex px-5 justify-between items-center w-full'>
+       <div className='flex px-5 justify-between items-center w-full gap-10'>
           <div className='text-gray-800 text-2xl '>
             <h5 className='font-medium'>{prod.product.title}</h5>
             <h6 className='font-medium'>{prod.price} EGP</h6>
             <button onClick={()=>mutate(prod.product._id)} className='text-red-600 font-medium text-sm cursor-pointer'>{isPending?<i className='fa-solid fa-spin fa-spinner'></i>:<><i className='fa-solid fa-trash font-medium text-sm'></i>Remove</>}</button>
           </div>
-          <div>
+          <div className="flex items-center">
             <button onClick={()=>updateMutate({id:prod.product._id,count:prod.count+1})} className='border-main border rounded-[4px] p-2 px-3 text-gray-900 cursor-pointer text-sm'>+</button>
             <span className='text-black px-4'>{isPendingM?<i className='fa-solid fa-spin fa-spinner'></i>:prod.count}</span>
             <button onClick={()=>updateMutate({id:prod.product._id,count:prod.count-1})} className='border-main border rounded-[4px] p-2 px-3.5 text-gray-900 cursor-pointer  text-sm'>-</button>

@@ -18,11 +18,9 @@ export default  function AddToCartBtn({id}:{id:string}) {
     <button 
   onClick={() => mutate({ id })} 
   className='
-    absolute z-10 w-[70%] mx-auto text-white bg-green text-xl
+     w-[70%] mx-auto text-white bg-green text-xl
     text-center py-2 rounded-[8px] cursor-pointer my-3
-    bottom-[-10rem] opacity-0 pointer-events-none
-    transition-all duration-400 ease-in-out
-    group-hover:bottom-0 group-hover:opacity-100 group-hover:pointer-events-auto
+    
     flex justify-center
   '
 >
